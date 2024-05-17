@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto2Mongdb.Renta"
+             Title="Renta">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <!-- Lista de Carros -->
+            <Label Text="Carro Seleccionado:" />
+            <ListView x:Name="carrosListView" ItemSelected="carrosListView_ItemSelected" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Imagen}" WidthRequest="100" HeightRequest="100" />
+                                <StackLayout>
+                                    <Label Text="{Binding Placas}"/>
+                                    <Label Text="{Binding Marca}" />
+                                    <Label Text="{Binding Modelo}" />
+                                    <Label Text="{Binding Año}" />
+                                    <Label Text="{Binding PrecioPorDia, StringFormat='Precio por día: {0:C}'}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <!-- Placas y Precio -->
+            <StackLayout Orientation="Vertical">
+                <!--<Image x:Name="carroImage" HeightRequest="200" WidthRequest="200" />-->
+                <Label Text="Placas:" />
+                <Entry x:Name="placasEntry" IsEnabled="False" />
+                <Label Text="Precio por Día:" />
+                <Entry x:Name="precioEntry" IsEnabled="False" />
+            </StackLayout>
+
+            <!-- Datos del Cliente -->
+            <Label Text="Datos del Cliente:" />
+            <Entry x:Name="nombreClienteEntry" Placeholder="Nombre del Cliente" />
+            <Entry x:Name="telefonoEntry" Placeholder="Teléfono" />
+
+            <!-- Fechas de Salida y Entrega -->
+            <Label Text="Fechas de Salida y Entrega:" />
+            <StackLayout Orientation="Horizontal">
+                <DatePicker x:Name="fechaSalidaPicker" DateSelected="fechaSalidaPicker_DateSelected"/>
+                <DatePicker x:Name="fechaEntregaPicker" DateSelected="fechaEntregaPicker_DateSelected" />
+            </StackLayout>
+
+            <!-- Total a Pagar -->
+            <Label Text="Total a Pagar por Día:" />
+            <Entry x:Name="totalPagarEntry" IsEnabled="False" />
+
+            <!-- Botón de Rentar -->
+            <Button x:Name="btnRentar" Text="Rentar" Clicked="btnRentar_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

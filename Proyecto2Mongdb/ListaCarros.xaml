@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto2Mongdb.ListaCarros"
+             Title="ListaCarros">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Botón de actualización -->
+            <Button x:Name="btnActualizar" Text="Actualizar Lista" Clicked="btnActualizar_Clicked"
+        WidthRequest="120" HeightRequest="40"/>
+
+
+
+            <!-- Lista de carros -->
+            <ListView x:Name="carrosListView" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Imagen}" WidthRequest="100" HeightRequest="100" />
+                                <StackLayout>
+                                    <Label Text="{Binding Placas}"/>
+                                    <Label Text="{Binding Marca}" />
+                                    <Label Text="{Binding Modelo}" />
+                                    <Label Text="{Binding Año}" />
+                                    <Label Text="{Binding PrecioPorDia, StringFormat='Precio por día: {0:C}'}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

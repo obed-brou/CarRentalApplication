@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto2Mongdb.RegistrarAuto"
+             Title="RegistrarAuto">
+    <StackLayout Padding="20">
+
+        <!-- Campos para ingresar la información del carro -->
+        <Entry Placeholder="Placas" x:Name="placasEntry" Completed="placasEntry_Completed"/>
+        <Entry Placeholder="Marca" x:Name="marcaEntry"/>
+        <Entry Placeholder="Modelo" x:Name="modeloEntry"/>
+        <Entry Placeholder="Año" x:Name="añoEntry"/>
+        <Entry Placeholder="Precio por Día" x:Name="precioEntry"/>
+        <!-- Botón para cargar imagen del carro -->
+        <Button x:Name="btnCargarImagen" Text="Cargar Imagen" Clicked="btnCargarImagen_Clicked"/>
+
+        <!-- Mostrar la imagen seleccionada -->
+        <Image x:Name="carroImage" HeightRequest="200" WidthRequest="200" />
+
+        <!-- Botón para agregar el carro -->
+        <Button x:Name="btnAgregarCarro" Text="Registrar Carro" Clicked="btnAgregarCarro_Clicked"/>
+        <Button x:Name="btnActualizarCarro" Text="Actualizar Carro" Clicked="btnActualizarCarro_Clicked"/>
+
+    </StackLayout>
+</ContentPage>
